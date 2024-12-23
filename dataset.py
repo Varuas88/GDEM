@@ -194,7 +194,13 @@ class Dataset(object):
         self.num_nodes = num_nodes
 
 def get_dataset(name, normalize_features=True, transform=None):
-    path = f"./data/{name}"
+        # Use Kaggle-compatible directory
+    base_dir = "/kaggle/working"
+    path = os.path.join(base_dir, "data", name)
+
+    # Ensure the directory exists
+    if not os.path.isdir(path):
+        os.makedirs(path)
 
     if name in ["cora", "citeseer", "pubmed"]:
         dataset = Planetoid(path, name)
