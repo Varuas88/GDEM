@@ -97,7 +97,7 @@ class DataGraphSAINT:
     """datasets used in GraphSAINT paper"""
 
     def __init__(self, dataset, **kwargs):
-        dataset_str = "./data/" + dataset + "/"
+        dataset_str = "/kaggle/working/data/" + dataset + "/"
         adj_full = sp.load_npz(dataset_str + "adj_full.npz")
         self.num_nodes = adj_full.shape[0]
         if dataset == "ogbn-arxiv":
@@ -304,7 +304,8 @@ def mask_to_index(index, size):
     return all_idx[index]
 
 def load_eigen(dataset):
-    dir = "./data/" + dataset + "/"
+    #dir = "./data/" + dataset + "/"
+    dir = os.path.join("/kaggle/working", "data", dataset)
     val_file_name = "eigenvalues.npy"
     vec_file_name = "eigenvectors.npy"
     
@@ -333,7 +334,8 @@ def load_eigen(dataset):
 
 def get_eigh(laplacian_matrix, data_name, save=True):
 
-    dir = "./data/" + data_name + "/"
+    #dir = "./data/" + data_name + "/"
+    dir = os.path.join("/kaggle/working", "data", data_name)
     if not os.path.isdir(dir):
         os.makedirs(dir)
 
