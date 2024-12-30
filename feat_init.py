@@ -84,7 +84,8 @@ class GraphAgent:
 
         x_syn, y_syn = self.x_syn.detach(), self.y_syn
         
-        dir = f"./initial_feat/{args.dataset}"
+        #dir = f"./initial_feat/{args.dataset}"
+        dir = f"/kaggle/working/initial_feat/{args.dataset}"
         if not os.path.isdir(dir):
             os.makedirs(dir)
 
@@ -265,7 +266,7 @@ class GraphAgent:
 parser = argparse.ArgumentParser()
 parser.add_argument("--gpu_id", type=int, default=1, help="gpu id")
 parser.add_argument("--seed", type=int, default=15)
-parser.add_argument("--config", type=str, default='./config/config_init.json')
+parser.add_argument("--config", type=str, default='/kaggle/input/config/config_init.json')
 
 parser.add_argument("--runs", type=int, default=10)
 parser.add_argument("--expID", type=int, default=0)
