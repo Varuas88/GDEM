@@ -53,7 +53,7 @@ else:
     data = Transd2Ind(data_full)
 
 #dataset_dir = f"/data/{args.dataset}"
-dataset_dir = f"/kaggle/input/data/{args.dataset}"
+dataset_dir = f"/kaggle/working/data/{args.dataset}"
 idx_lcc = np.load(f"{dataset_dir}/idx_lcc.npy")
 idx_train_lcc = np.load(f"{dataset_dir}/idx_train_lcc.npy")
 idx_map = np.load(f"{dataset_dir}/idx_map.npy")
