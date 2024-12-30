@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument("--gpu_id", type=int, default=1, help="gpu id")
 parser.add_argument("--seed", type=int, default=15)
-parser.add_argument("--config", type=str, default='./config/config_distill.json')
+parser.add_argument("--config", type=str, default='/kaggle/input/config/config_distill.json')
 
 parser.add_argument("--runs", type=int, default=10)
 parser.add_argument("--dataset", type=str, default="citeseer") # [citeseer, pubmed, ogbn-arxiv, flickr, reddit, squirrel, twitch-gamer]
@@ -52,7 +52,8 @@ else:
     data_full = get_dataset(args.dataset, args.normalize_features)
     data = Transd2Ind(data_full)
 
-dataset_dir = f"./data/{args.dataset}"
+#dataset_dir = f"/data/{args.dataset}"
+dataset_dir = f"/kaggle/input/data/{args.dataset}"
 idx_lcc = np.load(f"{dataset_dir}/idx_lcc.npy")
 idx_train_lcc = np.load(f"{dataset_dir}/idx_train_lcc.npy")
 idx_map = np.load(f"{dataset_dir}/idx_map.npy")
