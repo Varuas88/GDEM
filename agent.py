@@ -154,7 +154,7 @@ class GraphAgent:
             verbose=False
         )
         
-        dir = f"./saved_ours/{args.dataset}-{args.reduction_rate}"
+        dir = f"/kaggle/working/saved_ours/{args.dataset}-{args.reduction_rate}"
         if not os.path.isdir(dir):
             os.makedirs(dir)
 
