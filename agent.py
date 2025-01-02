@@ -332,7 +332,7 @@ class GraphAgent:
 
     
     def get_init_syn_feat(self, dataset, reduction_rate, expID):
-        init_syn_x = torch.load(f"./initial_feat/{dataset}/x_init_{reduction_rate}_{expID}.pt", map_location="cpu")
+        init_syn_x = torch.load(f"kaggle/working/initial_feat/{dataset}/x_init_{reduction_rate}_{expID}.pt", map_location="cpu")
         return init_syn_x
     
         
